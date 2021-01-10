@@ -1,3 +1,3 @@
 *** Settings ***
 
-Resource        ../pages/CalculatorHomePage.pages.robot
+Resource        ../pages/PesquisarProduto.pages.robot

@@ -1,6 +1,6 @@
 *** Settings ***
 
-Resource    ../../config/congig.robot
+Resource    ../../config/config.robot
 
 *** Keywords ***
 Start Test

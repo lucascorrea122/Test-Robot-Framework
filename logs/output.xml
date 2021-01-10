@@ -1,84 +1,250 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot generator="Robot 3.2.2 (Python 3.8.3 on win32)" generated="20210109 18:04:22.173" rpa="false">
-<suite id="s1" name="Tests" source="C:\Users\lucas\Documents\TeasyStructure\tests">
-<suite id="s1-s1" name="Flowtests.Tests" source="C:\Users\lucas\Documents\TeasyStructure\tests\flowtests.tests.robot">
-<test id="s1-s1-t1" name="Calculo Soma Cinco Macro">
+<robot generator="Robot 3.2.2 (Python 3.8.3 on win32)" generated="20210109 20:26:42.718" rpa="false">
+<suite id="s1" name="Tests" source="C:\Users\lucas\Documents\GitHub\Test-Robot-Framework\tests">
+<suite id="s1-s1" name="Flowtests.Tests" source="C:\Users\lucas\Documents\GitHub\Test-Robot-Framework\tests\flowtests.tests.robot">
+<test id="s1-s1-t1" name="Pesquisa Produto">
 <kw name="Start Test" library="hooks.pages.commons" type="setup">
-<kw name="Open Browser">
+<kw name="Open Browser" library="SeleniumLibrary">
+<doc>Opens a new browser instance to the optional ``url``.</doc>
 <arguments>
 <arg>${URL_HOST}</arg>
 <arg>${Browser}</arg>
 </arguments>
-<msg timestamp="20210109 18:04:22.312" level="FAIL">No keyword with name 'Open Browser' found.</msg>
-<status status="FAIL" starttime="20210109 18:04:22.311" endtime="20210109 18:04:22.312"></status>
+<msg timestamp="20210109 20:26:43.097" level="INFO">Opening browser 'chrome' to base url 'https://demo.cs-cart.com/stores/2e5a98ff61dc4c89/'.</msg>
+<status status="PASS" starttime="20210109 20:26:43.097" endtime="20210109 20:26:58.461"></status>
 </kw>
-<status status="FAIL" starttime="20210109 18:04:22.307" endtime="20210109 18:04:22.312"></status>
+<kw name="Set Window Size" library="SeleniumLibrary">
+<doc>Sets current windows size to given ``width`` and ``height``.</doc>
+<arguments>
+<arg>${BROSER_CUSTOMER_WIDHT}</arg>
+<arg>${BROSER_CUSTOMER_HEIGHT}</arg>
+</arguments>
+<status status="PASS" starttime="20210109 20:26:58.461" endtime="20210109 20:27:00.580"></status>
+</kw>
+<kw name="Set Selenium Implicit Wait" library="SeleniumLibrary">
+<doc>Sets the implicit wait value used by Selenium.</doc>
+<arguments>
+<arg>${TIME_TO_WAIT}</arg>
+</arguments>
+<status status="PASS" starttime="20210109 20:27:00.581" endtime="20210109 20:27:00.582"></status>
+</kw>
+<status status="PASS" starttime="20210109 20:26:43.097" endtime="20210109 20:27:00.582"></status>
+</kw>
+<kw name="Pesquisa Produto" library="PesquisarProduto.pages">
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<doc>Waits until the element ``locator`` is visible.</doc>
+<arguments>
+<arg>${CampoInput}</arg>
+<arg>timeout=2</arg>
+</arguments>
+<status status="PASS" starttime="20210109 20:27:00.583" endtime="20210109 20:27:00.620"></status>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<doc>Click the element identified by ``locator``.</doc>
+<arguments>
+<arg>${CampoInput}</arg>
+</arguments>
+<msg timestamp="20210109 20:27:00.620" level="INFO">Clicking element 'id:search_input'.</msg>
+<status status="PASS" starttime="20210109 20:27:00.620" endtime="20210109 20:27:00.753"></status>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<arguments>
+<arg>${CampoInput}</arg>
+<arg>${ElementoPesquisa}</arg>
+</arguments>
+<msg timestamp="20210109 20:27:00.753" level="INFO">Typing text 'T-shirt color white' into text field 'id:search_input'.</msg>
+<status status="PASS" starttime="20210109 20:27:00.753" endtime="20210109 20:27:00.866"></status>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<doc>Click the element identified by ``locator``.</doc>
+<arguments>
+<arg>${BotaoPesquisar}</arg>
+</arguments>
+<msg timestamp="20210109 20:27:00.867" level="INFO">Clicking element 'class:ty-search-magnifier'.</msg>
+<status status="PASS" starttime="20210109 20:27:00.866" endtime="20210109 20:27:03.468"></status>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<doc>Waits until the element ``locator`` is visible.</doc>
+<arguments>
+<arg>document.getElementByClassName('ty-pict</arg>
+<arg>cm-image')</arg>
+<arg>timeout=2</arg>
+</arguments>
+<msg timestamp="20210109 20:27:03.469" level="FAIL">Keyword 'SeleniumLibrary.Wait Until Element Is Visible' got multiple values for argument 'timeout'.</msg>
+<status status="FAIL" starttime="20210109 20:27:03.469" endtime="20210109 20:27:03.469"></status>
+</kw>
+<status status="FAIL" starttime="20210109 20:27:00.583" endtime="20210109 20:27:03.469"></status>
 </kw>
 <kw name="Finish Test" library="hooks.pages.commons" type="teardown">
-<kw name="Capture Page Screenshot">
-<msg timestamp="20210109 18:04:22.318" level="FAIL">No keyword with name 'Capture Page Screenshot' found.</msg>
-<status status="FAIL" starttime="20210109 18:04:22.318" endtime="20210109 18:04:22.319"></status>
+<kw name="Capture Page Screenshot" library="SeleniumLibrary">
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<msg timestamp="20210109 20:27:03.746" level="INFO" html="yes">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-36.png"&gt;&lt;img src="selenium-screenshot-36.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20210109 20:27:03.471" endtime="20210109 20:27:03.746"></status>
 </kw>
-<kw name="Close Browser">
-<msg timestamp="20210109 18:04:22.325" level="FAIL">No keyword with name 'Close Browser' found.</msg>
-<status status="FAIL" starttime="20210109 18:04:22.324" endtime="20210109 18:04:22.325"></status>
+<kw name="Close Browser" library="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" starttime="20210109 20:27:03.746" endtime="20210109 20:27:05.904"></status>
 </kw>
-<status status="FAIL" starttime="20210109 18:04:22.313" endtime="20210109 18:04:22.325">Several failures occurred:
-
-1) No keyword with name 'Capture Page Screenshot' found.
-
-2) No keyword with name 'Close Browser' found.</status>
+<status status="PASS" starttime="20210109 20:27:03.470" endtime="20210109 20:27:05.904"></status>
 </kw>
-<status status="FAIL" starttime="20210109 18:04:22.304" endtime="20210109 18:04:22.343" critical="yes">Setup failed:
-No keyword with name 'Open Browser' found.
-
-Also teardown failed:
-Several failures occurred:
-
-1) No keyword with name 'Capture Page Screenshot' found.
-
-2) No keyword with name 'Close Browser' found.</status>
+<status status="FAIL" starttime="20210109 20:26:43.097" endtime="20210109 20:27:05.904" critical="yes">Keyword 'SeleniumLibrary.Wait Until Element Is Visible' got multiple values for argument 'timeout'.</status>
 </test>
-<test id="s1-s1-t2" name="Calculo Soma Cinco Separado">
+<test id="s1-s1-t2" name="Registrar User">
 <kw name="Start Test" library="hooks.pages.commons" type="setup">
-<kw name="Open Browser">
+<kw name="Open Browser" library="SeleniumLibrary">
+<doc>Opens a new browser instance to the optional ``url``.</doc>
 <arguments>
 <arg>${URL_HOST}</arg>
 <arg>${Browser}</arg>
 </arguments>
-<msg timestamp="20210109 18:04:22.352" level="FAIL">No keyword with name 'Open Browser' found.</msg>
-<status status="FAIL" starttime="20210109 18:04:22.352" endtime="20210109 18:04:22.352"></status>
+<msg timestamp="20210109 20:27:05.904" level="INFO">Opening browser 'chrome' to base url 'https://demo.cs-cart.com/stores/2e5a98ff61dc4c89/'.</msg>
+<status status="PASS" starttime="20210109 20:27:05.904" endtime="20210109 20:27:22.384"></status>
 </kw>
-<status status="FAIL" starttime="20210109 18:04:22.349" endtime="20210109 18:04:22.353"></status>
+<kw name="Set Window Size" library="SeleniumLibrary">
+<doc>Sets current windows size to given ``width`` and ``height``.</doc>
+<arguments>
+<arg>${BROSER_CUSTOMER_WIDHT}</arg>
+<arg>${BROSER_CUSTOMER_HEIGHT}</arg>
+</arguments>
+<status status="PASS" starttime="20210109 20:27:22.385" endtime="20210109 20:27:24.659"></status>
+</kw>
+<kw name="Set Selenium Implicit Wait" library="SeleniumLibrary">
+<doc>Sets the implicit wait value used by Selenium.</doc>
+<arguments>
+<arg>${TIME_TO_WAIT}</arg>
+</arguments>
+<status status="PASS" starttime="20210109 20:27:24.659" endtime="20210109 20:27:24.662"></status>
+</kw>
+<status status="PASS" starttime="20210109 20:27:05.904" endtime="20210109 20:27:24.662"></status>
+</kw>
+<kw name="Registrar Aplicacao" library="PesquisarProduto.pages">
+<kw name="Click Element" library="SeleniumLibrary">
+<doc>Click the element identified by ``locator``.</doc>
+<arguments>
+<arg>${MyAccount}</arg>
+</arguments>
+<msg timestamp="20210109 20:27:24.663" level="INFO">Clicking element 'class:ty-account-info__title'.</msg>
+<status status="PASS" starttime="20210109 20:27:24.663" endtime="20210109 20:27:24.757"></status>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<doc>Click the element identified by ``locator``.</doc>
+<arguments>
+<arg>${BotaoRegistrar}</arg>
+</arguments>
+<msg timestamp="20210109 20:27:24.758" level="INFO">Clicking element 'class:ty-btn__primary'.</msg>
+<status status="PASS" starttime="20210109 20:27:24.758" endtime="20210109 20:27:37.281"></status>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<arguments>
+<arg>${NameIinput}</arg>
+<arg>${name}</arg>
+</arguments>
+<msg timestamp="20210109 20:27:37.282" level="INFO">Typing text 'Lucas' into text field 'id:elm_6'.</msg>
+<status status="PASS" starttime="20210109 20:27:37.281" endtime="20210109 20:27:37.377"></status>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<arguments>
+<arg>${LastNameInput}</arg>
+<arg>${LastName}</arg>
+</arguments>
+<msg timestamp="20210109 20:27:37.378" level="INFO">Typing text 'Correa' into text field 'id:elm_7'.</msg>
+<status status="PASS" starttime="20210109 20:27:37.378" endtime="20210109 20:27:37.504"></status>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<arguments>
+<arg>${PhoneInput}</arg>
+<arg>${Phone}</arg>
+</arguments>
+<msg timestamp="20210109 20:27:37.505" level="INFO">Typing text '+55(53)99103-9759' into text field 'id:elm_9'.</msg>
+<status status="PASS" starttime="20210109 20:27:37.505" endtime="20210109 20:27:37.752"></status>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<arguments>
+<arg>${EmailInput}</arg>
+<arg>${email}</arg>
+</arguments>
+<msg timestamp="20210109 20:27:37.753" level="INFO">Typing text 'eslucascorrea@gmail.com' into text field 'id:email'.</msg>
+<status status="PASS" starttime="20210109 20:27:37.753" endtime="20210109 20:27:37.977"></status>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<arguments>
+<arg>${PasswordInput}</arg>
+<arg>${password}</arg>
+</arguments>
+<msg timestamp="20210109 20:27:37.978" level="INFO">Typing text 'lucas123' into text field 'id:password1'.</msg>
+<status status="PASS" starttime="20210109 20:27:37.978" endtime="20210109 20:27:38.093"></status>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<arguments>
+<arg>${ConfirmPasswordInput}</arg>
+<arg>${ConfirmPassword}</arg>
+</arguments>
+<msg timestamp="20210109 20:27:38.093" level="INFO">Typing text 'lucas123' into text field 'id:password2'.</msg>
+<status status="PASS" starttime="20210109 20:27:38.093" endtime="20210109 20:27:38.206"></status>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<arguments>
+<arg>${NascimentoInput}</arg>
+<arg>${Nascimento}</arg>
+</arguments>
+<msg timestamp="20210109 20:27:38.206" level="INFO">Typing text '12/15/1994' into text field 'id:birthday'.</msg>
+<status status="PASS" starttime="20210109 20:27:38.206" endtime="20210109 20:27:38.521"></status>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<doc>Click the element identified by ``locator``.</doc>
+<arguments>
+<arg>${Check}</arg>
+</arguments>
+<msg timestamp="20210109 20:27:38.522" level="INFO">Clicking element 'id:profile_mailing_list_1'.</msg>
+<status status="PASS" starttime="20210109 20:27:38.521" endtime="20210109 20:27:38.607"></status>
+</kw>
+<kw name="Execute Javascript" library="SeleniumLibrary">
+<doc>Executes the given JavaScript code with possible arguments.</doc>
+<arguments>
+<arg>document.getElementsByClassName("recaptcha-checkbox-border")[0].click()</arg>
+</arguments>
+<msg timestamp="20210109 20:27:38.608" level="INFO">Executing JavaScript:
+document.getElementsByClassName("recaptcha-checkbox-border")[0].click()
+Without any arguments.</msg>
+<kw name="Capture Page Screenshot" library="SeleniumLibrary">
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<msg timestamp="20210109 20:27:38.923" level="INFO" html="yes">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-37.png"&gt;&lt;img src="selenium-screenshot-37.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20210109 20:27:38.617" endtime="20210109 20:27:38.924"></status>
+</kw>
+<msg timestamp="20210109 20:27:38.926" level="FAIL">JavascriptException: Message: javascript error: Cannot read property 'click' of undefined
+  (Session info: chrome=87.0.4280.88)
+</msg>
+<status status="FAIL" starttime="20210109 20:27:38.608" endtime="20210109 20:27:38.926"></status>
+</kw>
+<status status="FAIL" starttime="20210109 20:27:24.663" endtime="20210109 20:27:38.926"></status>
 </kw>
 <kw name="Finish Test" library="hooks.pages.commons" type="teardown">
-<kw name="Capture Page Screenshot">
-<msg timestamp="20210109 18:04:22.361" level="FAIL">No keyword with name 'Capture Page Screenshot' found.</msg>
-<status status="FAIL" starttime="20210109 18:04:22.361" endtime="20210109 18:04:22.362"></status>
+<kw name="Capture Page Screenshot" library="SeleniumLibrary">
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<msg timestamp="20210109 20:27:39.198" level="INFO" html="yes">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-38.png"&gt;&lt;img src="selenium-screenshot-38.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20210109 20:27:38.928" endtime="20210109 20:27:39.199"></status>
 </kw>
-<kw name="Close Browser">
-<msg timestamp="20210109 18:04:22.367" level="FAIL">No keyword with name 'Close Browser' found.</msg>
-<status status="FAIL" starttime="20210109 18:04:22.367" endtime="20210109 18:04:22.367"></status>
+<kw name="Close Browser" library="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" starttime="20210109 20:27:39.199" endtime="20210109 20:27:41.351"></status>
 </kw>
-<status status="FAIL" starttime="20210109 18:04:22.354" endtime="20210109 18:04:22.368">Several failures occurred:
-
-1) No keyword with name 'Capture Page Screenshot' found.
-
-2) No keyword with name 'Close Browser' found.</status>
+<status status="PASS" starttime="20210109 20:27:38.927" endtime="20210109 20:27:41.351"></status>
 </kw>
-<status status="FAIL" starttime="20210109 18:04:22.348" endtime="20210109 18:04:22.374" critical="yes">Setup failed:
-No keyword with name 'Open Browser' found.
-
-Also teardown failed:
-Several failures occurred:
-
-1) No keyword with name 'Capture Page Screenshot' found.
-
-2) No keyword with name 'Close Browser' found.</status>
+<status status="FAIL" starttime="20210109 20:27:05.904" endtime="20210109 20:27:41.351" critical="yes">JavascriptException: Message: javascript error: Cannot read property 'click' of undefined
+  (Session info: chrome=87.0.4280.88)
+</status>
 </test>
-<status status="FAIL" starttime="20210109 18:04:22.245" endtime="20210109 18:04:22.383"></status>
+<status status="FAIL" starttime="20210109 20:26:42.765" endtime="20210109 20:27:41.351"></status>
 </suite>
-<status status="FAIL" starttime="20210109 18:04:22.184" endtime="20210109 18:04:22.386"></status>
+<status status="FAIL" starttime="20210109 20:26:42.734" endtime="20210109 20:27:41.351"></status>
 </suite>
 <statistics>
 <total>
@@ -93,6 +259,5 @@ Several failures occurred:
 </suite>
 </statistics>
 <errors>
-<msg timestamp="20210109 18:04:22.272" level="ERROR">Error in file 'C:\Users\lucas\Documents\TeasyStructure\pages\commons\hooks.pages.commons.robot' on line 3: Resource file '..\..\config\congig.robot' does not exist.</msg>
 </errors>
 </robot>

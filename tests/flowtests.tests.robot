@@ -7,12 +7,11 @@ Test Setup      Start Test
 Test Teardown   Finish Test
 
 *** Test Cases ***
-Calculo Soma Cinco Macro
-    CalculoSomaCinco
+Pesquisa Produto 
+    Pesquisa Produto 
 
-Calculo Soma Cinco Separado
-    Clicar no botao dois
-    Clicar no botao mais
-    Clicar no botao tres
-    Clicar no botao igual    
-    Verificar soma 5
+Registrar User
+    Registrar Aplicacao
+
+AddProduto
+    ComprarCamisa
